@@ -7,7 +7,7 @@
   />
 </a>
 
-## typescript-package/descriptor
+## typescript-package/wrapped-descriptor
 
 <!-- npm badge -->
 [![npm version][typescript-package-npm-badge-svg]][typescript-package-npm-badge]
@@ -38,12 +38,6 @@ A **lightweight** TypeScript library for wrapped property descriptor.
 
 ## Installation
 
-Install peer dependencies types
-
-```bash
-npm install @typedly/callback @typedly/descriptor  --save-peer
-```
-
 Install peer dependencies
 
 ```bash
@@ -59,11 +53,13 @@ npm install @typescript-package/wrapped-descriptor --save-peer
 ```typescript
 import {
   // Abstract.
+  PlainWrappedDescriptorBase,
+  WrappedDescriptorBase,
   WrappedDescriptorCore,
-
   // Class.
-  WrappedDescriptor
-} from '@typescript-package/descriptor';
+  PlainWrappedDescriptor,
+  WrappedDescriptor,
+} from '@typescript-package/wrapped-descriptor';
 ```
 
 ## Contributing
@@ -131,29 +127,33 @@ MIT © typescript-package ([license][typescript-package-license])
 
 ## Related packages
 
-- **[@typescript-package/descriptor](https://github.com/typescript-package/descriptor)**: A **TypeScript** library for property descriptor.
+- **[@typescript-package/chain-descriptor](https://github.com/typescript-package/chain-descriptor)**: A **TypeScript** library for chain property descriptor.
 - **[@typescript-package/controller](https://github.com/typescript-package/controller)**: A **TypeScript** package with for various kind of controllers.
+- **[@typescript-package/descriptor](https://github.com/typescript-package/descriptor)**: A **TypeScript** library for property descriptor.
+- **[@typescript-package/descriptor-chain](https://github.com/typescript-package/descriptor-chain)**: A **TypeScript** library for property descriptor chain.
+- **[@typescript-package/descriptors](https://github.com/typescript-package/descriptors)**: A **TypeScript** library for property descriptors.
 - **[@typescript-package/property](https://github.com/typescript-package/property)**: A **TypeScript** package with features to handle object properties.
+- **[@typescript-package/wrap-descriptor](https://github.com/typescript-package/wrap-descriptor)**: A **TypeScript** package for wrapping object descriptors.
 - **[@typescript-package/wrap-property](https://github.com/typescript-package/wrap-property)**: A **TypeScript** package for wrapping object properties.
 - **[@xtypescript/property](https://github.com/xtypescript/property)** - A comprehensive, reactive **TypeScript** library for precise and extensible object property control.
 
 <!-- This package: typescript-package  -->
   <!-- GitHub: badges -->
-  [typescript-package-badge-issues]: https://img.shields.io/github/issues/typescript-package/descriptor
-  [isscript-package-badge-forks]: https://img.shields.io/github/forks/typescript-package/descriptor
-  [typescript-package-badge-stars]: https://img.shields.io/github/stars/typescript-package/descriptor
-  [typescript-package-badge-license]: https://img.shields.io/github/license/typescript-package/descriptor
+  [typescript-package-badge-issues]: https://img.shields.io/github/issues/typescript-package/wrapped-descriptor
+  [isscript-package-badge-forks]: https://img.shields.io/github/forks/typescript-package/wrapped-descriptor
+  [typescript-package-badge-stars]: https://img.shields.io/github/stars/typescript-package/wrapped-descriptor
+  [typescript-package-badge-license]: https://img.shields.io/github/license/typescript-package/wrapped-descriptor
   <!-- GitHub: badges links -->
-  [typescript-package-issues]: https://github.com/typescript-package/descriptor/issues
-  [typescript-package-forks]: https://github.com/typescript-package/descriptor/network
-  [typescript-package-license]: https://github.com/typescript-package/descriptor/blob/master/LICENSE
-  [typescript-package-stars]: https://github.com/typescript-package/descriptor/stargazers
+  [typescript-package-issues]: https://github.com/typescript-package/wrapped-descriptor/issues
+  [typescript-package-forks]: https://github.com/typescript-package/wrapped-descriptor/network
+  [typescript-package-license]: https://github.com/typescript-package/wrapped-descriptor/blob/master/LICENSE
+  [typescript-package-stars]: https://github.com/typescript-package/wrapped-descriptor/stargazers
 <!-- This package -->
 
 <!-- Package: typescript-package -->
   <!-- npm -->
-  [typescript-package-npm-badge-svg]: https://badge.fury.io/js/@typescript-package%2Fdescriptor.svg
-  [typescript-package-npm-badge]: https://badge.fury.io/js/@typescript-package%2Fdescriptor
+  [typescript-package-npm-badge-svg]: https://badge.fury.io/js/@typescript-package%2Fwrapped-descriptor.svg
+  [typescript-package-npm-badge]: https://badge.fury.io/js/@typescript-package%2Fwrapped-descriptor
 
 <!-- GIT -->
 [git-semver]: http://semver.org/
