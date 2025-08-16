@@ -3,7 +3,7 @@ import { WrappedDescriptorBase } from './wrapped-descriptor-base.abstract';
 // Interface.
 import { WrappedPropertyDescriptor } from '@typedly/descriptor';
 /**
- * @description
+ * @description The concrete implementation of wrapped property descriptor.
  * @export
  * @class WrappedDescriptor
  * @template [O=any] The type of the object to define the descriptor on.
