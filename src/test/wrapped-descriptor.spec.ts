@@ -21,8 +21,8 @@ describe('WrappedDescriptor should ', () => {
   it('have a privateKey', () => {
     expect(zeroWrap.privateKey).toBe('_age');
   });
-  it('have a previousDescriptor', () => {
-    expect(zeroWrap.previousDescriptor).toBeDefined();
+  it('have a previousDescriptor undefined', () => {
+    expect(zeroWrap.previousDescriptor).toBeUndefined();
   });
   it('have a configurable property', () => {
     expect(zeroWrap.configurable).toBeUndefined();
