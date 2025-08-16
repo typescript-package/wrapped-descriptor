@@ -79,9 +79,6 @@ export abstract class WrappedDescriptorBase<
     return this.#onSet;
   }
 
-  public get previous() {
-    return this.#previous;
-  }
   /**
    * @inheritdoc
    */

@@ -91,7 +91,6 @@ export abstract class PlainWrappedDescriptorBase<
    * @public
    * @type {D}
    */
-  public previous: D;
   public previousDescriptor: D;
 
   /**
@@ -132,7 +131,7 @@ export abstract class PlainWrappedDescriptorBase<
     this.active = typeof attributes.active === 'boolean' || typeof attributes.active === 'object' ? attributes.active : PlainWrappedDescriptorBase.active as A;
     this.enabled = typeof attributes.enabled === 'boolean' || typeof attributes.enabled === 'object' ? attributes.enabled : PlainWrappedDescriptorBase.enabled as N;
     this.key = key;
-    this.previousDescriptor = this.previous = (attributes.previousDescriptor || Object.getOwnPropertyDescriptor(object, key)) as any;
+    this.previousDescriptor = (attributes.previousDescriptor || Object.getOwnPropertyDescriptor(object, key)) as any;
     this.privateKey = attributes.privateKey || `_${String(key)}`;
 
     // Optional.
