@@ -38,11 +38,13 @@ A **lightweight** TypeScript library for wrapped property descriptor.
 
 ## Installation
 
-Install peer dependencies
+### 1. Install peer dependencies
 
 ```bash
-npm install @typescript-package/descriptor  --save-peer
+npm install @typescript-package/descriptor --save-peer
 ```
+
+### 2. Install the package
 
 ```bash
 npm install @typescript-package/wrapped-descriptor --save-peer
@@ -60,6 +62,37 @@ import {
   PlainWrappedDescriptor,
   WrappedDescriptor,
 } from '@typescript-package/wrapped-descriptor';
+```
+
+### `WrappedDescriptor`
+
+```typescript
+import { WrappedDescriptor } from '@typescript-package/wrapped-descriptor';
+
+export class Person {
+  public age = 27;
+  name = 'Someone';
+  work = 'Gig';
+  _age = 37;
+  _firstName = 'John';
+}
+
+// Initialize `Person`.
+const person = new Person();
+
+// Wrap the `age`.
+const firstWrap = new WrappedDescriptor(person, 'age', {
+  active: true as boolean,
+  onGet: (key, previousValue, value) => (
+    console.debug(`#1. Get value: ${value} for key: ${key}`, previousValue),
+    value
+  ),
+  onSet: (value, previousValue, key) => (
+    console.debug(`#1. Set value: ${value}`, previousValue, key),
+    value
+  ),
+  previousDescriptor: Object.getOwnPropertyDescriptor(person, 'age'),
+});
 ```
 
 ## Contributing
