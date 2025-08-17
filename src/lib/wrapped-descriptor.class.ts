@@ -13,7 +13,7 @@ import { WrappedPropertyDescriptor } from '@typedly/descriptor';
  * @template {boolean} [N=boolean] The type of enabled.
  * @template {boolean} [C=boolean] The type of configurable.
  * @template {boolean} [E=boolean] The type of enumerable.
- * @template {WrappedDescriptor<O, K, V, A, N, C, E, D>} [D=WrappedDescriptor<O, K, V, A, N, C, E, any>] The type of the previous descriptor.
+ * @template {WrappedDescriptor<O, K, V, A, N, C, E, D> | PropertyDescriptor} [D=WrappedDescriptor<O, K, V, A, N, C, E, any>] The type of the previous descriptor.
  * @extends {WrappedDescriptorBase<O, K, V, A, N, C, E, D>}
  */
 export class WrappedDescriptor<

@@ -3,6 +3,24 @@ import { Person } from "./person.test";
 
 console.group('WrappedDescriptor');
 
+const person = new Person();
+
+let controlledDescriptor = new WrappedDescriptor(person, 'age', {
+    onGet(key, previousValue, value) {
+      console.log(`Getting ${key}: ${previousValue} => ${value}`);
+      return value;
+    },
+    onSet(value, previousValue, key) {
+      console.log(`Setting ${key}: ${previousValue} => ${value}`);
+      return value;
+    }
+});
+
+Object.defineProperty(person, 'age', controlledDescriptor);
+
+person.age = 30;
+person.age;
+
 describe('WrappedDescriptor should ', () => {
   let key = 'age' as keyof Person;
   let person = new Person();
@@ -21,8 +39,8 @@ describe('WrappedDescriptor should ', () => {
   it('have a privateKey', () => {
     expect(zeroWrap.privateKey).toBe('_age');
   });
-  it('have a previousDescriptor', () => {
-    expect(zeroWrap.previousDescriptor).toBeDefined();
+  it('have a previousDescriptor undefined', () => {
+    expect(zeroWrap.previousDescriptor).toBeUndefined();
   });
   it('have a configurable property', () => {
     expect(zeroWrap.configurable).toBeUndefined();

@@ -16,7 +16,7 @@ import { SetterCallback, GetterCallback } from '@typedly/callback';
  * @template {boolean} [N=boolean] The type of enabled.
  * @template {boolean} [C=boolean] The type of configurable.
  * @template {boolean} [E=boolean] The type of enumerable.
- * @template {PlainWrappedDescriptorBase<O, K, V, A, N, C, E, D>} [D=PlainWrappedDescriptorBase<O, K, V, A, N, C, E, any>] 
+ * @template {PlainWrappedDescriptorBase<O, K, V, A, N, C, E, D> | PropertyDescriptor} [D=PlainWrappedDescriptorBase<O, K, V, A, N, C, E, any>] 
  * @extends {WrappedDescriptorCore<O, K, V, A, N, C, E, D>}
  */
 export abstract class PlainWrappedDescriptorBase<
@@ -35,7 +35,7 @@ export abstract class PlainWrappedDescriptorBase<
   // Enumerable.
   E extends boolean = boolean,
   // The type of the previous descriptor.
-  D extends PlainWrappedDescriptorBase<O, K, V, A, N, C, E, D> = PlainWrappedDescriptorBase<O, K, V, A, N, C, E, any>,
+  D extends PlainWrappedDescriptorBase<O, K, V, A, N, C, E, D> | PropertyDescriptor = PlainWrappedDescriptorBase<O, K, V, A, N, C, E, any>,
 > extends WrappedDescriptorCore<O, K, V, A, N, C, E, D> {
   /**
    * @description The active state of the descriptor.

@@ -13,7 +13,7 @@ import { WrappedPropertyDescriptor } from '@typedly/descriptor';
  * @template {boolean} [N=boolean] The type of enabled.
  * @template {boolean} [C=boolean] The type of configurable.
  * @template {boolean} [E=boolean] The type of enumerable.
- * @template {PlainWrappedDescriptorBase<O, K, V, A, N, C, E, D>} [D=PlainWrappedDescriptorBase<O, K, V, A, N, C, E, any>] 
+ * @template {PlainWrappedDescriptorBase<O, K, V, A, N, C, E, D> | PropertyDescriptor} [D=PlainWrappedDescriptorBase<O, K, V, A, N, C, E, any>] 
  */
 export class PlainWrappedDescriptor<
   // Object.
@@ -31,7 +31,7 @@ export class PlainWrappedDescriptor<
   // Enumerable.
   E extends boolean = boolean,
   // The type of the previous descriptor.
-  D extends PlainWrappedDescriptorBase<O, K, V, A, N, C, E, D> = PlainWrappedDescriptorBase<O, K, V, A, N, C, E, any>,
+  D extends PlainWrappedDescriptorBase<O, K, V, A, N, C, E, D> | PropertyDescriptor = PlainWrappedDescriptorBase<O, K, V, A, N, C, E, any>,
 > extends PlainWrappedDescriptorBase<O, K, V, A, N, C, E, D> {
   constructor(object: O, key: K, descriptor: WrappedPropertyDescriptor<O, K, V, A, N, C, E, D>) {
     super(object, key, descriptor);
